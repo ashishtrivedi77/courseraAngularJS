@@ -1,0 +1,8 @@
+<div class="wrapper" ng-repeat="item in dirCtrl.found">
+    <div class="box">{{item.name}} </div>
+    <div class="box">{{item.short_name}}</div>
+    <div class="box">{{item.description}}</div>
+    <div class="box"><button class="btn btn-primary" ng-click="dirCtrl.removeItem({arg: $index});">Don't want this one!</button></div>
+    </div>
+    <div class="error" ng-if="dirCtrl.displayWarning">Nothing found</div>
+</div>
