@@ -1,0 +1,31 @@
+<div ng-if=!infoCtrl.Person> Not Signed Up Yet.   <a ui-sref="public.signup"> Signup</a> Now!</div>
+  <div class="info-container" ng-if=infoCtrl.Person >
+      <label for="firstName" class="sign-title">First Name:</label>
+      <input class="sign-input" name="firstName" type="text" value="{{infoCtrl.Person.firstName}}" disabled>
+      <br/>
+      <label for="lastName" class="sign-title">Last Name:</label>
+      <input class="sign-input" name="lastName" type="text" value="{{infoCtrl.Person.lastName}}" disabled>
+      <br/>
+      <label for="emailAddress" class="sign-title">Email Address:</label>
+      <input class="sign-input" name="emailAddress" type="email" value="{{infoCtrl.Person.emailAddress}}" disabled>
+      <br/>
+      <label for="phoneNumber" class="sign-title">Phone Number:</label>
+      <input class="sign-input" name="phoneNumber" type="text" value="{{infoCtrl.Person.phoneNumber}}" disabled>
+      <br/>
+      <label for="menuNumber" class="sign-title">Menu Number:</label>
+      <input class="sign-input" name="menuNumber" type="text" value="{{infoCtrl.Person.menuNumber}}" disabled>
+      <br/>
+    <div class="menu-item-tile">
+    <div class="row">
+    <span>
+      <br/>
+      <div>
+        <div>{{nfoCtrl.Person.imageShortName}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.Person.image}}" alt="{{infoCtrl.Person.imageShortName}}" align="left">
+      </div>
+      <h3 class="menu-item-title">{{infoCtrl.Person.imageName}}</h3>
+      <p class="menu-item-details">{{infoCtrl.Person.description}}</p>
+      </span>
+  </div>
+  </div>
+    </div>

@@ -1,0 +1,52 @@
+<div class="sign-container" >
+	<form name="signupform" novalidate>
+			<label for="firstName" class="sign-title">First Name:</label>
+			<input class="sign-input" name="firstName" type="text" ng-model="signUpCtrl.Person.firstName" 
+			style="color:black" required minlength="4">
+			<span ng-if="signupform.firstName.$error.required && signupform.firstName.$touched">
+				First Name is required
+			</span>
+			<span ng-if="signupform.firstName.$error.minlength && signupform.firstName.$touched">
+				First Name should be 4 characters minimum
+			</span>
+			<br/>
+			<label for="lastName" class="sign-title">Last Name:</label>
+			<input class="sign-input" name="lastName" type="text" ng-model="signUpCtrl.Person.lastName"required minlength="4">
+			<span ng-if="signupform.lastName.$error.required && signupform.lastName.$touched">
+				Last Name is required
+			</span>
+			<span ng-if="signupform.lastName.$error.minlength && signupform.lastName.$touched">
+				Last Name should be 4 characters minimum
+			</span>
+			<br/>
+			<label for="emailAddress" class="sign-title">Email Address:</label>
+			<input class="sign-input" name="emailAddress" type="email" ng-model="signUpCtrl.Person.emailAddress" required minlength="10">
+			<span ng-if="signupform.emailAddress.$error.required && signupform.emailAddress.$touched">
+				Email Address is required
+			</span>
+			<span ng-if="signupform.emailAddress.$error.minlength && signupform.phoneNumber.$touched">
+				Email Address must be 10 characters
+			</span>
+			<br/>
+			<label for="phoneNumber" class="sign-title">Phone Number:</label>
+			<input class="sign-input" name="phoneNumber" type="text" ng-model="signUpCtrl.Person.phoneNumber" required minlength="12">
+			<span ng-if="signupform.phoneNumber.$error.required && signupform.phoneNumber.$touched">
+				Phone Number is required
+			</span>
+			<span ng-if="signupform.phoneNumber.$error.minlength && signupform.phoneNumber.$touched">
+				Phone Number format xxx-xxx-xxxx
+			</span>
+			<br/>
+			<label for="menuNumber" class="sign-title">Menu Number:</label>
+			<input class="sign-input" name="menuNumber" type="text" ng-model="signUpCtrl.Person.menuNumber"required min-length="4">
+			<span ng-if="signupform.menuNumber.$error.required && signupform.menuNumber.$touched">
+				Menu Number is required
+			</span>
+			<span ng-if="signUpCtrl.errorMessage.length">
+				{{signUpCtrl.errorMessage}}
+			</span>
+			<br/> 
+			<input type="submit" value="Submit" id="sign-submit" ng-disabled="signupform.$invalid" ng-click="signUpCtrl.go()">
+		<div ng-if="signUpCtrl.successMessage.length">{{signUpCtrl.successMessage}}</div>
+	</form>
+</div>
